@@ -19,3 +19,26 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.gradient_text {
+  background: linear-gradient(135deg,#FF39A7 0,#E265AF 16%,#9F5DE6 33%,#655BE2 50%,#9F5DE6 67%,#E265AF 84%,#FF39A7 100%);
+   background-clip: text;
+   background-size: 200% auto;
+   color: #000;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   text-align: center;
+   transform: translateZ(0)
+ }
+ 
+ @keyframes gradient-animation {
+   0% {
+     stop-color: #FF39A7;
+   }
+   50% {
+     stop-color: #372cd3;
+   }
+   100% {
+     stop-color: #FF39A7;
+   }
+ }
