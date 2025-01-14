@@ -84,6 +84,9 @@ function LoanCalculator() {
   Калькулятор аннуитетного кредита
 </h2>
       <div className="bg-white p-6 rounded shadow-md w-full max-w-md">
+      <label className="block mb-2 font-semibold">
+      Сумма кредита:
+        </label>
         <input
           type="number"
           name="amount"
@@ -92,6 +95,9 @@ function LoanCalculator() {
           placeholder="Сумма кредита (S)"
           className="w-full mb-4 p-2 border border-blue-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
         />
+        <label className="block mb-2 font-semibold">
+      Процентная ставка:
+        </label>
         <input
           type="number"
           name="interestRate"
@@ -100,6 +106,9 @@ function LoanCalculator() {
           placeholder="Годовая процентная ставка (%) (P)"
           className="w-full mb-4 p-2 border border-blue-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
         />
+        <label className="block mb-2 font-semibold">
+        Срок в месяцах:
+        </label>
         <input
           type="number"
           name="months"
@@ -108,7 +117,7 @@ function LoanCalculator() {
           placeholder="Срок в месяцах (N)"
           className="w-full mb-4 p-2 border border-blue-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
         />
-        <label className="block mb-2 text-blue-600 font-semibold">
+        <label className="block mb-2 font-semibold">
           Дата начала кредита:
         </label>
         <input
