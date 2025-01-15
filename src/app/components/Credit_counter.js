@@ -78,12 +78,19 @@ function LoanCalculator() {
     });
   }
 
+  function formatNumber(number) {
+    return new Intl.NumberFormat('ru-RU', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(number);
+  }
+
   return (
     <div className="bg-blue-50 min-h-screen p-4 flex flex-col items-center">
       <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-snug break-words">
   Калькулятор аннуитетного кредита
 </h2>
-      <div className="bg-white p-6 rounded shadow-md w-full max-w-md">
+      <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-md">
       <label className="block mb-2 font-semibold">
       Сумма кредита:
         </label>
@@ -141,9 +148,9 @@ function LoanCalculator() {
           <h3 className="text-xl font-semibold text-blue-600 mb-4">
             Результаты:
           </h3>
-          <p className="mb-2">Ежемесячный платёж: {results.monthlyPayment} ₽</p>
-          <p className="mb-2">Переплата за весь период: {results.overpayment} ₽</p>
-          <p className="mb-4">Полная сумма кредита: {results.totalPayment} ₽</p>
+          <p className="mb-2">Ежемесячный платёж: {formatNumber(results.monthlyPayment)} ₽</p>
+          <p className="mb-2">Переплата за весь период: {formatNumber(results.overpayment)} ₽</p>
+          <p className="mb-4">Полная сумма кредита: {formatNumber(results.totalPayment)} ₽</p>
 
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-blue-300">
@@ -163,22 +170,22 @@ function LoanCalculator() {
                 {results.schedule.map((payment) => (
                   <tr key={payment.month}>
                     <td className="border border-blue-300 p-2 text-center">
-                      {payment.month}
+                      {formatNumber(payment.month)}
                     </td>
                     <td className="border border-blue-300 p-2 text-center">
                       {payment.paymentDate}
                     </td>
                     <td className="border border-blue-300 p-2 text-right">
-                      {payment.monthlyPayment}
+                      {formatNumber(payment.monthlyPayment)}
                     </td>
                     <td className="border border-blue-300 p-2 text-right">
-                      {payment.principalPayment}
+                      {formatNumber(payment.principalPayment)}
                     </td>
                     <td className="border border-blue-300 p-2 text-right">
-                      {payment.interestPayment}
+                      {formatNumber(payment.interestPayment)}
                     </td>
                     <td className="border border-blue-300 p-2 text-right">
-                      {payment.remainingBalance}
+                      {formatNumber(payment.remainingBalance)}
                     </td>
                   </tr>
                 ))}
