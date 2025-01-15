@@ -170,7 +170,7 @@ function LoanCalculator() {
                 {results.schedule.map((payment) => (
                   <tr key={payment.month}>
                     <td className="border border-blue-300 p-2 text-center">
-                      {formatNumber(payment.month)}
+                      {payment.month}
                     </td>
                     <td className="border border-blue-300 p-2 text-center">
                       {payment.paymentDate}
