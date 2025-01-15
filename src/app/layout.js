@@ -20,10 +20,10 @@ export const metadata = {
   openGraph: {
     title: "Калькулятор аннуитетного кредита",
     description: "Простой инструмент для расчета аннуитетного кредита. Узнайте, сколько вы будете платить каждый месяц.",
-    url: "https://example.com/",
+    url: "https://credit-calculator.flowweb.ru/",
     images: [
       {
-        url: "https://example.com/preview.jpg",
+        url: "https://credit-calculator.flowweb.ru/public/logo.png",
         width: 800,
         height: 600,
         alt: "Превью калькулятора аннуитетного кредита",
