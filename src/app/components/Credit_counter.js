@@ -86,7 +86,7 @@ function LoanCalculator() {
   }
 
   return (
-    <div className="bg-blue-50 min-h-screen p-4 flex flex-col items-center">
+    <div className="bg-sky-50 min-h-screen p-4 flex flex-col items-center">
       <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-snug break-words">
   Калькулятор аннуитетного кредита
 </h2>
