@@ -23,7 +23,7 @@ export const metadata = {
     url: "https://credit-calculator.flowweb.ru/",
     images: [
       {
-        url: "https://credit-calculator.flowweb.ru/public/logo.png",
+        url: "https://credit-calculator.flowweb.ru/logo.png",
         width: 800,
         height: 600,
         alt: "Превью калькулятора аннуитетного кредита",
