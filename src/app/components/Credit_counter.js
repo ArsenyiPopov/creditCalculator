@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import MadeByFlowweb from "./MadeByFlowweb";
+import PrintButton from "./PrintButton";
 
 function LoanCalculator() {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ function LoanCalculator() {
     months: "",
     startDate: new Date().toISOString().split("T")[0],
   });
+  console.log(formData)
 
   const [results, setResults] = useState({
     monthlyPayment: 0,
@@ -99,7 +101,7 @@ function LoanCalculator() {
           name="amount"
           value={formData.amount}
           onChange={handleInputChange}
-          placeholder="Сумма кредита (S)"
+          placeholder="Введите сумму"
           className="w-full mb-4 p-2 border border-blue-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
         />
         <label className="block mb-2 font-semibold">
@@ -110,7 +112,7 @@ function LoanCalculator() {
           name="interestRate"
           value={formData.interestRate}
           onChange={handleInputChange}
-          placeholder="Годовая процентная ставка (%) (P)"
+          placeholder="Введите ставку (%)"
           className="w-full mb-4 p-2 border border-blue-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
         />
         <label className="block mb-2 font-semibold">
@@ -121,7 +123,7 @@ function LoanCalculator() {
           name="months"
           value={formData.months}
           onChange={handleInputChange}
-          placeholder="Срок в месяцах (N)"
+          placeholder="Введите срок в месяцах"
           className="w-full mb-4 p-2 border border-blue-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
         />
         <label className="block mb-2 font-semibold">
@@ -148,9 +150,16 @@ function LoanCalculator() {
           <h3 className="text-xl font-semibold text-blue-600 mb-4">
             Результаты:
           </h3>
+          <div className="flex justify-between">
+          <div>
           <p className="mb-2">Ежемесячный платёж: {formatNumber(results.monthlyPayment)} ₽</p>
           <p className="mb-2">Переплата за весь период: {formatNumber(results.overpayment)} ₽</p>
           <p className="mb-4">Полная сумма кредита: {formatNumber(results.totalPayment)} ₽</p>
+          </div>
+          <div className="content-end mb-4">
+          <PrintButton/>
+          </div>
+          </div>
 
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-blue-300">
